@@ -2,7 +2,7 @@
 [MailMate](https://freron.com) Bundle for [Noteplan3](https://noteplan.co)
 
 ## Functions
-- generate new task for todays day as a markdown link
+- generate new task for todays day or tomorrow as a markdown link
 - open the mail in your default mail programm - probably MailMate
 
 ## Installation
