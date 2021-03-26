@@ -1,0 +1,18 @@
+{	name = "Add task today";
+uuid = "86BF6E66-602D-474F-8301-1C20245646C3";
+script = '#!/bin/bash\n"${MM_BUNDLE_SUPPORT}/bin/add"\n';
+environment = "MM_MESSAGE_ID=${message-id.split}\nMM_SUBJECT=${subject.prefix:+${subject.prefix}}${subject.blob:+[${subject.blob}]}${subject.body}\n" ;
+keyEquivalent = "^o"; // Keyboard shortcut
+}
+
+// {	name = "Example Command";
+	// uuid = "86BF6E66-602D-474F-8301-1C20245646C3";
+	// environment = "MM_FROM_NAME=${from.name:${from.address}}\n"; // Setup 1 or more environment variables using a format string.
+	// input = "canonical"; // Options are: none, raw, decoded, canonical, html, selection, formatted
+	// output = "actions"; // Options are: discard, actions
+	// executionMode = "singleMessage"; // Options are: noMessages, singleMessage, multipleMessages
+//	script = "#!/bin/bash\n/bin/helper";
+	// keyEquivalent = "^o"; // Keyboard shortcut
+	// conditions = "list-id exists"; // Can be used to ensure that a command only applies to certain types of messages.
+	// Other options are formatString, separatorString, suffixString, filesPattern, saveForEditing, ...
+// }
