@@ -1,0 +1,6 @@
+{	name = "Add task tomorrow";
+uuid = "7d4d6c30-f7cd-4755-881c-92ae7d0b1f00"; // get uuid from https://www.uuidgenerator.net
+script = '#!/bin/bash\n"${MM_BUNDLE_SUPPORT}/bin/add"\n';
+environment = "MM_MESSAGE_ID=${message-id.split}\nMM_SUBJECT=${subject.prefix:+${subject.prefix}}${subject.blob:+[${subject.blob}]}${subject.body}\nNP_DAY=tomorrow" ;
+keyEquivalent = "^Q";
+}
