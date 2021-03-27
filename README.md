@@ -1,4 +1,4 @@
-# noteplan.mmbundle
+# Mailmate Noteplan bundle
 [MailMate](https://freron.com) Bundle for [Noteplan3](https://noteplan.co)
 
 ## Functions
