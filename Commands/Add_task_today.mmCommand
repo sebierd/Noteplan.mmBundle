@@ -1,6 +1,6 @@
 {	name = "Add task today";
 uuid = "86BF6E66-602D-474F-8301-1C20245646C3";
 script = '#!/bin/bash\n"${MM_BUNDLE_SUPPORT}/bin/add"\n';
-environment = "MM_MESSAGE_ID=${message-id.split}\nMM_SUBJECT=${subject.prefix:+${subject.prefix}}${subject.blob:+[${subject.blob}]}${subject.body}\nNP_DAY=today" ;
+environment = "MM_MESSAGE_ID=${message-id.split}\nMM_SUBJECT=${subject.prefix:+${subject.prefix}}${subject.blob:+[${subject.blob}]}${subject.body}\nNP_DAY=today\nNP_TYPE=Task";
 keyEquivalent = "^Q";
 }
