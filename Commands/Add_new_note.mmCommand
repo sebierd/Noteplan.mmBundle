@@ -1,0 +1,7 @@
+{	name = "Make new note";
+uuid = "8e5ed96c-ec3f-4c3d-8d9c-a441ec5bf60b"; // get uuid from https://www.uuidgenerator.net
+script = '#!/bin/bash\n"${MM_BUNDLE_SUPPORT}/bin/add"\n';
+environment = "MM_MESSAGE_ID=${message-id.split}\nMM_SUBJECT=${subject.prefix:+${subject.prefix}}${subject.blob:+[${subject.blob}]}${subject.body}\nMM_Text=${message.text}\nNP_DAY=tomorrow\nNP_TYPE=Note";
+keyEquivalent = "^Q";
+input = "canonical"; 
+}
