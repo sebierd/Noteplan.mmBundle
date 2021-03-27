@@ -4,6 +4,7 @@
 ## Functions
 - generate new task for todays day or tomorrow as a markdown link
 - open the mail in your default mail programm - probably MailMate
+- create a new note based on subject and the mail text as markdown text
 
 ## Installation
 - download the latest version of the MailMate Bundle
