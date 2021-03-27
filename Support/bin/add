@@ -4,12 +4,21 @@
 require 'cgi'
 
 # get environmentel variables
-message_url = "(message://%3c" + ENV['MM_MESSAGE_ID'] + "%3e)"
-subject = "[" + ENV['MM_SUBJECT'] + "]"
-day = ENV['NP_DAY']
+type = ENV['NP_TYPE']
+body = $stdin.read
+
+if type == "Task"
+  message_url = "(message://%3c" + ENV['MM_MESSAGE_ID'] + "%3e)"
+  subject = "[" + ENV['MM_SUBJECT'] + "]"
+  mode = "Text?noteDate=" + ENV['NP_DAY'] + "&mode=prepend&openNote=yes&text=*%20" + CGI::escape(subject).gsub('+', '%20') + CGI::escape(message_url).gsub('+', '%20')
+elsif type == "Note"
+  message_url = "(message://%3c" + ENV['MM_MESSAGE_ID'] + "%3e)"
+  subject = ENV['MM_SUBJECT']
+  mode = "Note?openNote=yes&noteTitle=#%20" + CGI::escape(subject).gsub('+', '%20') + CGI::escape(body).gsub('+', '%20')
+end
 
 # x-callback-url scheme: https://noteplan.co/faq/General/X-Callback-Url%20Scheme/
 # create a new task
-url = "noteplan://x-callback-url/addText?noteDate=" + day + "&mode=append&openNote=yes&text=*%20" + CGI::escape(subject).gsub('+', '%20') + CGI::escape(message_url).gsub('+', '%20')
+url = "noteplan://x-callback-url/add" + mode
 # Use AppleScript to communicate with the application
 system("open", url)
